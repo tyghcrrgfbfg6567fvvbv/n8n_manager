@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>n8n Manager — Projects</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <script defer src="/static/script.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="top-left">
+      <h1>Projects</h1>
+      <div id="top-3" class="top-3-lines">
+        <!-- Top 3 lines populated by JS -->
+      </div>
+    </div>
+    <div class="top-right">
+      <button id="new-project-btn" class="icon-btn" title="New Project">+</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="repo-list">
+      <h2>All Repos</h2>
+      <div id="repos-container" class="repos-grid"></div>
+      <div class="actions">
+        <button id="sync-local">Sync all repos locally</button>
+      </div>
+    </section>
+
+    <section class="bottom-panel">
+      <h3>.env & n8n</h3>
+      <div id="env-info"></div>
+      <div class="n8n-controls">
+        <button id="install-n8n">Install n8n</button>
+        <button id="start-n8n">Start n8n</button>
+        <button id="stop-n8n">Stop n8n</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- New project modal -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Create New Project</h3>
+      <label>
+        Name
+        <input id="new-name" type="text" placeholder="repo-name" />
+      </label>
+      <label>
+        Private
+        <input id="new-private" type="checkbox" />
+      </label>
+      <label>
+        Description
+        <input id="new-desc" type="text" placeholder="optional description" />
+      </label>
+      <div class="modal-actions">
+        <button id="create-repo">Create</button>
+        <button id="cancel">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+        </html>
+  
