@@ -3,41 +3,51 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>n8n Manager — Projects</title>
+  <title>n8n Automation</title>
   <link rel="stylesheet" href="/static/style.css" />
   <script defer src="/static/script.js"></script>
 </head>
 <body>
   <header class="topbar">
     <div class="top-left">
-      <h1>Projects</h1>
-      <div id="top-3" class="top-3-lines">
-        <!-- Top 3 lines populated by JS -->
-      </div>
+      <button id="new-project-btn" class="icon-btn" title="New Project">+</button>
+      <h1>n8n Automation</h1>
     </div>
     <div class="top-right">
-      <button id="new-project-btn" class="icon-btn" title="New Project">+</button>
+      <button id="menu-btn" class="icon-btn" title="Menu">&#9776;</button>
     </div>
   </header>
 
-  <main>
-    <section class="repo-list">
-      <h2>All Repos</h2>
-      <div id="repos-container" class="repos-grid"></div>
-      <div class="actions">
-        <button id="sync-local">Sync all repos locally</button>
-      </div>
-    </section>
+  <aside id="side-panel">
+    <div class="side-panel-header">
+      <h2>Projects</h2>
+      <button id="close-side-panel-btn" class="icon-btn">&times;</button>
+    </div>
+    <div id="projects-container" class="projects-grid"></div>
+    <div class="actions">
+      <button id="sync-local">Sync Projects Locally</button>
+    </div>
+  </aside>
 
-    <section class="bottom-panel">
-      <h3>.env & n8n</h3>
-      <div id="env-info"></div>
-      <div class="n8n-controls">
-        <button id="install-n8n">Install n8n</button>
-        <button id="start-n8n">Start n8n</button>
-        <button id="stop-n8n">Stop n8n</button>
-      </div>
-    </section>
+  <div id="overlay" class="hidden"></div>
+
+  <main>
+    <div class="main-grid">
+      <section class="workspace">
+        <h2>Workspace</h2>
+        <iframe id="n8n-iframe" src="about:blank" frameborder="0"></iframe>
+      </section>
+
+      <section class="bottom-panel">
+        <h3>.env & n8n Controls</h3>
+        <div id="env-info"></div>
+        <div class="n8n-controls">
+          <button id="install-n8n">Install n8n</button>
+          <button id="start-n8n">Start n8n</button>
+          <button id="stop-n8n">Stop n8n</button>
+        </div>
+      </section>
+    </div>
   </main>
 
   <!-- New project modal -->
@@ -45,24 +55,16 @@
     <div class="modal-content">
       <h3>Create New Project</h3>
       <label>
-        Name
-        <input id="new-name" type="text" placeholder="repo-name" />
-      </label>
-      <label>
-        Private
-        <input id="new-private" type="checkbox" />
-      </label>
-      <label>
-        Description
-        <input id="new-desc" type="text" placeholder="optional description" />
+        Project Name
+        <input id="new-name" type="text" placeholder="my-awesome-project" />
       </label>
       <div class="modal-actions">
-        <button id="create-repo">Create</button>
+        <button id="create-project">Create</button>
         <button id="cancel">Cancel</button>
       </div>
     </div>
   </div>
 
 </body>
-        </html>
+</html>
   
