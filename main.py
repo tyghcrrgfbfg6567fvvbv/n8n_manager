@@ -151,4 +151,6 @@ def stop_n8n():
 if __name__ == "__main__":
     ensure_n8n_installed()
     start_n8n()
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    # Get port from environment variable, default to 5000 for local development
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
